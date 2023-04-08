@@ -7,9 +7,16 @@ let pokemon_name = "Togedemaru";
 let lv = 50;
 let sex = "Male";
 let nature = "Jolly";
+let item = "";
 
 function updateCard(new_pokemon) {
-    // nickname = new_pokemon.nickname;
+    pokemon_id = new_pokemon?.pokemon_id;
+    nickname = new_pokemon?.nickname;
+    pokemon_name = new_pokemon?.pokemon_name;
+    lv = new_pokemon?.lv;
+    sex = new_pokemon?.sex;
+    nature = new_pokemon?.nature;
+    item = new_pokemon?.item
 }
 
 function App() {
