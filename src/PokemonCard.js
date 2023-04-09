@@ -46,6 +46,9 @@ const PokemonCard = ({pokemon}) => {
                 <p id="pokemon_name">{pokemon?.pokemon_name}</p>
                 <p id="lv"> Lv: {pokemon?.lv}</p>
                 <p id="nature"> Nature: {pokemon?.nature}</p>
+                <p id="sex">{pokemon?.sex === "male" ? 
+                            "♂" : pokemon?.sex === "female" ? 
+                            "♀" : null}</p>
             </div>
         </Card>
     )
