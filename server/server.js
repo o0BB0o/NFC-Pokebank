@@ -8,8 +8,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const fs = require('fs');
+const net = require("net");
 
 const PORT = process.env.PORT || 3001;
+var server_port = "65432"
+var server_addr = "192.168.50.233"
 
 app.get('/api/data', (req, res) => {
   fs.readFile('mybank.json', (err, data) => {
@@ -34,6 +37,22 @@ app.post('/api/data', (req, res) => {
       }
     });
   });
+
+app.get('/api/nfc', (req, res) => {
+  const net = require('net');
+  const client = net.createConnection({port:server_port, host:server_addr},() => {
+    console.log("connected to server!");
+    client.write("0");
+  })
+  client.on('data',(data) => {
+    const pokemon = data.toString();
+    console.log(pokemon);
+    res.send(pokemon);
+    client.end();
+    client.destroy();
+  });
+
+});
   
   
 app.listen(PORT, () => {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PokemonCard from './PokemonCard';
 import BankGrid from './BankGrid';
+import UI from './UI';
 
 function App() {
   const [selectedPokemon, setSelectedPokemon] = useState(null);
@@ -17,6 +18,7 @@ function App() {
     <div>
     {console.log("passing ",selectedPokemon)}
       <PokemonCard pokemon={selectedPokemon} />
+      <UI onNFC_Readed={handlePokemonSelect}/>
       <BankGrid onPokemonSelect={handlePokemonSelect} />
     </div>
   );

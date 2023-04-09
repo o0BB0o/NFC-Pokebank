@@ -43,12 +43,11 @@ const PokemonCard = ({pokemon}) => {
         >
             <div id="pokemon_info">
                 <h3 id="nickname">{pokemon?.nickname}</h3>
-                <p id="pokemon_name">{pokemon?.pokemon_name}</p>
+                <p id="pokemon_name">{pokemon?.pokemon_name} {pokemon?.sex === "male" ?
+                    "♂" : pokemon?.sex === "female" ?
+                        "♀" : null}</p>
                 <p id="lv"> Lv: {pokemon?.lv}</p>
                 <p id="nature"> Nature: {pokemon?.nature}</p>
-                <p id="sex">{pokemon?.sex === "male" ? 
-                            "♂" : pokemon?.sex === "female" ? 
-                            "♀" : null}</p>
             </div>
         </Card>
     )
