@@ -24,7 +24,7 @@ function savePokemonBank(pokemonBank) {
     saveData(pokemonBank)
 }
 
-const BankGrid = () => {
+const BankGrid = ({onPokemonSelect}) => {
     const [pokemonBank, setPokemonBank] = useState([]);
 
     useEffect(() => {
@@ -50,13 +50,15 @@ const BankGrid = () => {
             dataSource={pokemonBank}
             renderItem={(item) => (
                 <List.Item>
-                    <Card
+                    <div onClick={() => {
+                        onPokemonSelect(item)
+                    }}><Card hoverable
                         style={{
                             width: 100,
                             height: 100
                         }}
                         cover={<img alt="selected" src={getPokemonSpriteUrl(item?.pokemon_id)}/>}>
-                    </Card>
+                    </Card></div>
                 </List.Item>
                 )
             }></List>
