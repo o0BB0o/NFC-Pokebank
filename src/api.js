@@ -7,6 +7,13 @@ export const getData = async () => {
   return data;
 };
 
+export const readNFCPokemon = async () => {
+  const response = await fetch("http://localhost:3001/api/nfc");
+  const data = await response.json();
+  console.log(data);
+  return data;
+};
+
 export const saveData = async (data) => {
   const response = await fetch(API_URL, {
     method: 'POST',

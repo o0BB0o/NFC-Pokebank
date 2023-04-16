@@ -46,7 +46,7 @@ app.get('/api/nfc', (req, res) => {
   })
   client.on('data',(data) => {
     const pokemon = data.toString();
-    console.log(pokemon);
+    console.log("received: " + pokemon);
     res.send(pokemon);
     client.end();
     client.destroy();
