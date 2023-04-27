@@ -51,9 +51,25 @@ app.get('/api/nfc', (req, res) => {
     client.end();
     client.destroy();
   });
-
 });
+
+app.get('/api/swap')
+
+
+app.post('/api/swap', (req, res) => {
+  const pokemons = req.body;
   
+
+  fs.writeFile('mybank.json', JSON.stringify(newData), (err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error writing data file');
+    } else {
+      res.send('Data saved successfully');
+    }
+  });
+});
+
   
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

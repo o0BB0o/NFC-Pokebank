@@ -20,21 +20,24 @@ function getPokemonSpriteUrl(id) {
 //     console.log(pokemonBank);
 // }
 
-function savePokemonBank(pokemonBank) {
-    saveData(pokemonBank)
-}
+// function savePokemonBank(pokemonBank) {
+//     saveData(pokemonBank)
+// }
 
-const BankGrid = ({onPokemonSelect}) => {
-    const [pokemonBank, setPokemonBank] = useState([]);
+const BankGrid = ({onPokemonSelect, pokemonBank}) => {
+    console.log("pokemonBank:", pokemonBank);
+    // const [pokemonBank, setPokemonBank] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-          const pokemonBank = await getData();
-          setPokemonBank(pokemonBank)
-        //   setData(data);
-        };
-        fetchData();
-      }, []);
+    
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //     const pokemonBank = await getData();
+    //     setPokemonBank(pokemonBank)
+    //   //   setData(data);
+    //   };
+    //   fetchData();
+    // }, []);
+
 
     return (
         <List

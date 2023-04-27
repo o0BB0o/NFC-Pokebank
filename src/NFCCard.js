@@ -3,7 +3,7 @@ import { readNFCPokemon } from './api';
 import { useEffect, useState } from 'react';
 import './PokemonCard.css';
 // import getPokemonSpriteUrl from './PokemonCard'
-import {Card} from 'antd';
+import {Button, Card} from 'antd';
 
 let pokemonImages = require('./pokemon_images.json');
 function getPokemonSpriteUrl(id) {
@@ -14,42 +14,52 @@ function getPokemonSpriteUrl(id) {
     return pokemonImages[id]["Image URL"];
 }
 
-const NFCCard = ({onNFCUpdate}) => {
-    // console.log("nfc pokemon: " + nfcPokemon);
-    const [NFCPokemon, setNFCPokemon] = useState(null);
+const NFCCard = ({nfcPokemon}) => {
+    console.log("nfc pokemon: " + nfcPokemon);
+    // const [NFCPokemon, setNFCPokemon] = useState(nfcPokemon);
 
-    useEffect(() => {
-        const fetchData = async () => {
-          const pokemon = await readNFCPokemon();
-          onNFCUpdate(pokemon)
-          setNFCPokemon(pokemon)
-          console.log("NFC pokemon fetched: " + pokemon);
-        //   setData(data);
-        };
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //       const pokemon = await readNFCPokemon();
+    //       onNFCUpdate(pokemon)
+    //       nfcPokemon = pokemon
+    //     //   setNFCPokemon(pokemon)
+    //       console.log("NFC pokemon fetched: " + pokemon);
+    //     //   setData(data);
+    //     };
+    //     fetchData();
+    // }, []);
 
-    return (
-        
+    // const fetchNFCPokemon = async () => {
+    //     const pokemon = await readNFCPokemon();
+    //     onNFCUpdate(pokemon)
+    //     // nfcPokemon = pokemon
+    //     //   setNFCPokemon(pokemon)
+    //     console.log("NFC pokemon fetched: " + pokemon);
+    //     //   setData(data);
+    // }
+
+    return (    
         <Card
             hoverable
             style={{
                 width: 300,
                 height: 480
             }}
-            cover={<img alt="selected" src={getPokemonSpriteUrl(NFCPokemon?.pokemon_id)}/>}
+            cover={<img alt="selected" src={getPokemonSpriteUrl(nfcPokemon?.pokemon_id)}/>}
         >
             <div id="pokemon_info">
                 {/* <div className="bank-actions">
                     <button className="drop-pokemon-button" onClick={NFCPokemon ? onNFC_Readed(NFCPokemon) : null}>GetFromNFC</button>
                 </div> */}
-                <h3 id="nickname">{NFCPokemon?.nickname}</h3>
-                <p id="pokemon_name">{NFCPokemon?.pokemon_name} {NFCPokemon?.sex === "male" ?
-                    "♂" : NFCPokemon?.sex === "female" ?
+                <h3 id="nickname">{nfcPokemon?.nickname}</h3>
+                <p id="pokemon_name">{nfcPokemon?.pokemon_name} {nfcPokemon?.sex === "male" ?
+                    "♂" : nfcPokemon?.sex === "female" ?
                         "♀" : null}</p>
-                <p id="lv"> Lv: {NFCPokemon?.lv}</p>
-                <p id="nature"> Nature: {NFCPokemon?.nature}</p>
+                <p id="lv"> Lv: {nfcPokemon?.lv}</p>
+                <p id="nature"> Nature: {nfcPokemon?.nature}</p>
             </div>
+            {/* <Button onClick={fetchNFCPokemon}>fetch NFC Pokemon</Button> */}
         </Card>
     )
 }
