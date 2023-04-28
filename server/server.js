@@ -53,19 +53,24 @@ app.get('/api/nfc', (req, res) => {
   });
 });
 
-app.get('/api/swap')
-
-
 app.post('/api/swap', (req, res) => {
-  const pokemons = req.body;
-  
-
-  fs.writeFile('mybank.json', JSON.stringify(newData), (err) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Error writing data file');
-    } else {
-      res.send('Data saved successfully');
+  const net = require('net');
+  const client = net.createConnection({port:server_port, host:server_addr},() => {
+    console.log("Trying to send 1!");
+    client.write("1");
+  })
+  client.on('data',(data) => {
+    if(data.toString() === "11") {
+      sendMessage = req.body;
+      sendMessage = JSON.stringify(sendMessage);
+      let utf8Encode = new TextEncoder();
+      sendMessage = utf8Encode.encode(sendMessage);
+      console.log(sendMessage);
+      client.write(sendMessage);
+      console.log("JOBS DONE");
+      res.send("Jobs Done");
+      client.end();
+      client.destroy();
     }
   });
 });

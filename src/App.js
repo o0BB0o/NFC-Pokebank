@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { readNFCPokemon } from './api';
+import { readNFCPokemon, swapNFCPokemon } from './api';
 import PokemonCard from './PokemonCard';
 import BankGrid from './BankGrid';
 import NFCCard from './NFCCard';
@@ -42,7 +42,7 @@ function App() {
     saveData(newBank)
     
     // write selected to nfc
-    
+    swapNFCPokemon(selectedPokemon);
     //if successful, update frontend display
     
     setSelectedPokemon(tmp2)
@@ -68,13 +68,12 @@ function App() {
 
   return (
     <div>
-      {console.log("passing ",nfcPokemon)}
       <Row justify="space-evenly">
         <Col span={12}>
           <PokemonCard pokemon={selectedPokemon} />
         </Col>
         <Col span={4}>
-          <Button type="primary" onClick={handleSwapPokemon}>{"<- Swap ->"}</Button>
+          {selectedPokemon && <Button type="primary" onClick={handleSwapPokemon}>{"<- Swap ->"}</Button>}
         </Col>
         <Col span={8}>
           {/* <PokemonCard pokemon={selectedPokemon} /> */}
