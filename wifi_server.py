@@ -36,9 +36,14 @@ def getData():
         GPIO.cleanup()
         return cardPokemon.encode()
 
-def writePokemon(pokemon):
+def writePokemon(data):
     reader = SimpleMFRC522()
+    inputPokemon = json.loads(str(data))
+    print(inputPokemon)
     print("Trying to write data...")
+    print(inputPokemon)
+    print(str(inputPokemon["pokemon_id"]) + "," + str(inputPokemon["nickname"]) + "," + str(inputPokemon["lv"]) + "," + str(inputPokemon["sex"])[0] + "," + str(inputPokemon["nature"]))
+    pokemon = str(inputPokemon["pokemon_id"]) + "," + str(inputPokemon["nickname"]) + "," + str(inputPokemon["lv"]) + "," + str(inputPokemon["sex"])[0] + "," + str(inputPokemon["nature"])
     try:
         reader.write(pokemon)
     finally:
@@ -62,9 +67,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             elif(recv_data == b'1'): # Want to write
                 client.sendall(b'11') # Reply: I'm ready. Send me the pokemon
                 while recv_data == b'1': # If the recv_data changed from 1 to some other stuff(Pokemon)
-                    client, clientInfo = s.accept()
-                    recv_data = client.recv(1024)
-                writePokemon(json.dump(recv_data))
+                    recv_data = client.recv(10240)
+                    print("got pokemon to write")
+                recv_data = str(recv_data, 'utf-8')
+                print(recv_data)
+                writePokemon(recv_data)
                 client.sendall(b'111') 
     except Exception as e:
         print("Error: ", e)
