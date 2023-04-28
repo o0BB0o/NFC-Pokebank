@@ -1,1 +1,82 @@
-[{"pokemon_name":"Togedemaru","pokemon_id":777,"nickname":"Picachu's Bro","lv":46,"sex":"male","nature":"Jolly","item":""},{"pokemon_name":"Mimikyu","pokemon_id":778,"nickname":"339","lv":50,"sex":"male","nature":"Adamant","item":""},{"pokemon_name":"Metagross","pokemon_id":376,"nickname":"megaxiebro","lv":65,"sex":"unknown","nature":"Jolly","item":""},{"pokemon_name":"Drakloak","pokemon_id":886,"nickname":"50x2","lv":70,"sex":"male","nature":"Naughty","item":""},{"pokemon_name":"Mareep","pokemon_id":179,"nickname":"Marr","lv":13,"sex":"female","nature":"Timid","item":"Sitrus Berry"},{"pokemon_id":"777","pokemon_name":"Togedemaru","nickname":"Bro","lv":"46","sex":"male","nature":"Jolly                              "},{"pokemon_name":"Togedemaru","pokemon_id":777,"nickname":"Picachu's Bro","lv":46,"sex":"male","nature":"Jolly","item":""},{"pokemon_id":"777","pokemon_name":"Togedemaru","nickname":"Bro","lv":"46","sex":"male","nature":"Jolly                              "},{"pokemon_id":"376","pokemon_name":"Metagross","nickname":"megaxiebro","lv":"65","sex":"unknown","nature":"Jolly                       "},{"pokemon_id":"727","pokemon_name":"Incineroar","nickname":"BESTPOKE","lv":"100","sex":"female","nature":"Adamant                      "},{"pokemon_id":"886","pokemon_name":"Drakloak","nickname":"50x2","lv":"70","sex":"male","nature":"Naughty                           "},{"pokemon_id":"777","pokemon_name":"Togedemaru","nickname":"Bro","lv":"46","sex":"male","nature":"Jolly                              "}]
+[{
+    "pokemon_name": "Mimikyu",
+    "pokemon_id": 778,
+    "nickname": "339",
+    "lv": 50,
+    "sex": "male",
+    "nature": "Adamant",
+    "item": ""
+}, {
+    "pokemon_name": "Metagross",
+    "pokemon_id": 376,
+    "nickname": "megaxiebro",
+    "lv": 65,
+    "sex": "unknown",
+    "nature": "Jolly",
+    "item": ""
+}, {
+    "pokemon_name": "Drakloak",
+    "pokemon_id": 886,
+    "nickname": "50x2",
+    "lv": 70,
+    "sex": "male",
+    "nature": "Naughty",
+    "item": ""
+}, {
+    "pokemon_name": "Mareep",
+    "pokemon_id": 179,
+    "nickname": "Marr",
+    "lv": 13,
+    "sex": "female",
+    "nature": "Timid",
+    "item": "Sitrus Berry"
+}, {
+    "pokemon_id": "727",
+    "pokemon_name": "Incineroar",
+    "nickname": "BESTPOKE",
+    "lv": "100",
+    "sex": "female",
+    "nature": "Adamant                      "
+}, {
+    "pokemon_id": "147",
+    "pokemon_name": "Dratini",
+    "nickname": "tini",
+    "lv": "14",
+    "sex": "female",
+    "nature": "Adamant"
+}, {
+    "pokemon_id": "199",
+    "pokemon_name": "Slowking",
+    "nickname": "bazhujia",
+    "lv": "100",
+    "sex": "male",
+    "nature": "Calm"
+}, {
+    "pokemon_id": "417",
+    "pokemon_name": "Pachirisu",
+    "nickname": "White Demon",
+    "lv": "50",
+    "sex": "female",
+    "nature": "Timid"
+}, {
+    "pokemon_id": "487",
+    "pokemon_name": "Giratina",
+    "nickname": "Giratina",
+    "lv": "50",
+    "sex": "unknown",
+    "nature": "Hardy"
+}, {
+    "pokemon_id": "531",
+    "pokemon_name": "Audino",
+    "nickname": "Arduino",
+    "lv": "14",
+    "sex": "male",
+    "nature": "Quiet"
+}, {
+    "pokemon_id": "658",
+    "pokemon_name": "Greninja",
+    "nickname": "Froakie",
+    "lv": "48",
+    "sex": "female",
+    "nature": "Lax"
+}]

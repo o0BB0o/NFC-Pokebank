@@ -68,14 +68,14 @@ function App() {
 
   return (
     <div>
-      <Row justify="space-evenly">
-        <Col span={12}>
+      <Row justify="space-evenly" align="middle" gutter={350}>
+        <Col >
           <PokemonCard pokemon={selectedPokemon} />
         </Col>
-        <Col span={4}>
+        <Col >
           {selectedPokemon && <Button type="primary" onClick={handleSwapPokemon}>{"<- Swap ->"}</Button>}
         </Col>
-        <Col span={8}>
+        <Col >
           {/* <PokemonCard pokemon={selectedPokemon} /> */}
           <NFCCard nfcPokemon={nfcPokemon}/>
         </Col>

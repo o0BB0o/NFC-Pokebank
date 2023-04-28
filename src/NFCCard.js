@@ -3,7 +3,9 @@ import { readNFCPokemon } from './api';
 import { useEffect, useState } from 'react';
 import './PokemonCard.css';
 // import getPokemonSpriteUrl from './PokemonCard'
-import {Button, Card} from 'antd';
+import {Button, Card, Typography} from 'antd';
+
+const {Title} = Typography
 
 let pokemonImages = require('./pokemon_images.json');
 function getPokemonSpriteUrl(id) {
@@ -46,7 +48,9 @@ const NFCCard = ({nfcPokemon}) => {
                 width: 300,
                 height: 480
             }}
-            cover={<img alt="selected" src={getPokemonSpriteUrl(nfcPokemon?.pokemon_id)}/>}
+            cover={<img alt="NFC" src={getPokemonSpriteUrl(nfcPokemon?.pokemon_id)}/>}
+            title="In NFC Card" 
+            bordered={true}
         >
             <div id="pokemon_info">
                 {/* <div className="bank-actions">
@@ -55,7 +59,7 @@ const NFCCard = ({nfcPokemon}) => {
                 <h3 id="nickname">{nfcPokemon?.nickname}</h3>
                 <p id="pokemon_name">{nfcPokemon?.pokemon_name} {nfcPokemon?.sex === "male" ?
                     "♂" : nfcPokemon?.sex === "female" ?
-                        "♀" : null}</p>
+                    "♀" : null}</p>
                 <p id="lv"> Lv: {nfcPokemon?.lv}</p>
                 <p id="nature"> Nature: {nfcPokemon?.nature}</p>
             </div>

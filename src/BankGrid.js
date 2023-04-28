@@ -42,13 +42,13 @@ const BankGrid = ({onPokemonSelect, pokemonBank}) => {
     return (
         <List
             grid={{
-                gutter: 16,
+                gutter: 32,
                 xs: 1,
                 sm: 2,
                 md: 4,
                 lg: 4,
-                xl: 6,
-                xxl: 3,
+                xl: 5,
+                xxl: 5,
             }}
             dataSource={pokemonBank}
             renderItem={(item) => (
@@ -57,8 +57,8 @@ const BankGrid = ({onPokemonSelect, pokemonBank}) => {
                         onPokemonSelect(item)
                     }}><Card hoverable
                         style={{
-                            width: 100,
-                            height: 100
+                            width: 150,
+                            height: 150,
                         }}
                         cover={<img alt="selected" src={getPokemonSpriteUrl(item?.pokemon_id)}/>}>
                     </Card></div>
